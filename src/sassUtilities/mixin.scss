@@ -1,0 +1,21 @@
+@mixin theme($bckgd: #0f0f0f, $color: #fff) {
+  background: $bckgd;
+  // box-shadow: 0 0 1px rgba($theme, .25);
+  color: $color;
+}
+@mixin flexBox(
+  $display: flex,
+  $align: center,
+  $justify: center,
+  $height: 100vh
+) {
+  display: $display;
+  flex-direction: column;
+  align-items: $align;
+  justify-content: $justify;
+  height: $height;
+}
+@mixin grid($template: 1fr 1fr 1fr) {
+  display: grid;
+  grid-template-columns: $template;
+}
