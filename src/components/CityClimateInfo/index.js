@@ -1,8 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
 import { css } from "@emotion/react";
 import PulseLoader from "react-spinners/PulseLoader";
-import { FiArrowLeft } from "react-icons/fi";
 import {
   fetchCityClimateInfo,
   fetchForecastClimateInfo,
@@ -13,6 +11,7 @@ import ExtraInfo from "../ExtraInfo";
 import MainInfo from "../MainInfo";
 import Theme from "../Theme";
 import "./styles.scss";
+import CustomLink from "../CustomLink";
 
 const CityClimateInfo = (props) => {
   const [loading, setLoading] = useState(true);
@@ -51,9 +50,7 @@ const CityClimateInfo = (props) => {
       {climateInfo ? (
         <Theme climateCode={climateInfo.weather[0].id}>
           <div className="link-to-home">
-            <Link className="link" to="/">
-              <FiArrowLeft size={28} />
-            </Link>
+            <CustomLink to="/" />
           </div>
           <div className="info-container">
             <MainInfo
@@ -90,14 +87,13 @@ const CityClimateInfo = (props) => {
           </div>
         </Theme>
       ) : (
-        <div className="loading">
+        <div className="loading" data-testid="loader">
           <PulseLoader
             loading={loading}
             css={loaderCss}
             size={30}
             speedMultiplier={2}
           />
-          ;
         </div>
       )}
     </>

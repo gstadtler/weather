@@ -1,0 +1,10 @@
+@import "../../sassUtilities/mixin.scss";
+
+.link {
+  @include theme(color);
+  text-decoration: none;
+  transition: 0.3s;
+  &:hover {
+    opacity: 50%;
+  }
+}

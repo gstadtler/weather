@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { IoEarthOutline } from "react-icons/io5";
 import "./styles.scss";
+import CustomLink from "../CustomLink";
 
 const Home = () => {
   return (
@@ -8,36 +8,24 @@ const Home = () => {
       <h1>WEATHER</h1>
       <h3>select a city</h3>
       <IoEarthOutline className="earth-icon" size={110} fontWeight={100} />
-      <ul>
+      <ul data-testid="links-list">
         <li>
-          <Link className="link" to="/dallol/climate-info">
-            Dallol
-          </Link>
+          <CustomLink to={"Dallol"} />
         </li>
         <li>
-          <Link className="link" to="/fairbanks/climate-info">
-            Fairbanks
-          </Link>
+          <CustomLink to={"Fairbanks"} />
         </li>
         <li>
-          <Link className="link" to="/london/climate-info">
-            London
-          </Link>
+          <CustomLink to={"London"} />
         </li>
         <li>
-          <Link className="link" to="/recife/climate-info">
-            Recife
-          </Link>
+          <CustomLink to={"Recife"} />
         </li>
         <li>
-          <Link className="link" to="/vancouver/climate-info">
-            Vancouver
-          </Link>
+          <CustomLink to={"Vancouver"} />
         </li>
         <li>
-          <Link className="link" to="/yakutsk/climate-info">
-            Yakutsk
-          </Link>
+          <CustomLink to={"Yakutsk"} />
         </li>
       </ul>
     </div>

@@ -27,14 +27,6 @@ $breakpoint-laptop: 1024px;
     line-height: 35px;
     li {
       text-align: center;
-      .link {
-        @include theme(color);
-        text-decoration: none;
-        transition: 0.3s;
-        &:hover {
-          opacity: 50%;
-        }
-      }
     }
   }
 }
