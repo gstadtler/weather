@@ -1,0 +1,97 @@
+@import "../../sassUtilities/mixin.scss";
+
+$rainy: #5f6776;
+$snowy: #b7b7b7;
+$sunny: #4dbcce;
+$breakpoint-laptop: 1024px;
+
+%extraInfo-wrapper {
+  @include grid($template: 1fr 1fr 1fr 1fr);
+  text-align: center;
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 30px;
+  h5 {
+    font-weight: 100;
+  }
+  p {
+    font-weight: 200;
+  }
+}
+
+%link {
+  display: flex;
+  padding: 15px;
+  .link {
+    @include theme(color);
+  }
+}
+
+.rainy-theme {
+  @include theme($bckgd: $rainy);
+  .link-to-home {
+    @extend %link;
+  }
+  .info-container {
+    @include flexBox;
+    .extraInfo-wrapper {
+      @extend %extraInfo-wrapper;
+    }
+  }
+}
+
+.snowy-theme {
+  @include theme($bckgd: $snowy, $color: #000);
+  .link-to-home {
+    @extend %link;
+  }
+  .info-container {
+    @include flexBox;
+    .extraInfo-wrapper {
+      @extend %extraInfo-wrapper;
+    }
+  }
+}
+
+.sunny-theme {
+  @include theme($bckgd: $sunny);
+  .link-to-home {
+    @extend %link;
+  }
+  .info-container {
+    @include flexBox;
+    .extraInfo-wrapper {
+      @extend %extraInfo-wrapper;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-laptop) {
+  .rainy-theme {
+    .info-container {
+      .extraInfo-wrapper {
+        font-size: 20px;
+        line-height: 25px;
+        margin-top: 35px;
+      }
+    }
+  }
+  .snowy-theme {
+    .info-container {
+      .extraInfo-wrapper {
+        font-size: 20px;
+        line-height: 25px;
+        margin-top: 35px;
+      }
+    }
+  }
+  .sunny-theme {
+    .info-container {
+      .extraInfo-wrapper {
+        font-size: 20px;
+        line-height: 25px;
+        margin-top: 35px;
+      }
+    }
+  }
+}

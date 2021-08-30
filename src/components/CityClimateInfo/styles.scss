@@ -1,0 +1,5 @@
+@import "../../sassUtilities/mixin.scss";
+
+.loading {
+  @include flexBox;
+}

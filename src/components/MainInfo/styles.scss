@@ -1,0 +1,54 @@
+@import "../../sassUtilities/mixin.scss";
+
+$breakpoint-laptop: 1024px;
+
+.main-info {
+  @include flexBox($height: auto);
+  text-align: center;
+  h1 {
+    font-weight: 200;
+  }
+  h4 {
+    font-weight: 200;
+    opacity: 80%;
+  }
+  .temp-wrapper {
+    display: flex;
+    h4 {
+      align-items: center;
+      font-size: 60px;
+    }
+    .aside-info {
+      @include flexBox($align: flex-end, $height: auto);
+      h5 & p {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-laptop) {
+  .main-info {
+    h1 {
+      font-size: 50px;
+    }
+    h4 {
+      font-size: 30px;
+    }
+    .temp-wrapper {
+      h4 {
+        font-size: 100px;
+        font-weight: 300;
+      }
+      .aside-info {
+        h5 {
+          font-size: 25px;
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
