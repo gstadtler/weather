@@ -1,9 +1,8 @@
+import Routes from "./routes";
+import "./sassUtilities/global.scss";
+
 function App() {
-  return (
-    <div className="App">
-      <h1>Weather</h1>
-    </div>
-  );
+  return <Routes />;
 }
 
 export default App;
